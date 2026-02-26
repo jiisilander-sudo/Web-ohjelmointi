@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Puhelinluettelo - kaikki</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--asentaa käyttöön jQuery kirjaston -->
+  </head>
+  <body>
+    <!-- Otsikko osio, sisältää navigoinnin sivujen välillä, hakee ulkoasun style.css:stä -->
+    <div id="header">
+      <h1>Kaikki henkilöt</h1>
+      <a href="index.html">Takaisin etusivulle</a>
+      <a href="haku.html">Hae nimellä</a>
+    </div>
+    <!-- Taulukko osio, hakee ulkoasun style.css:stä -->
+    <table id="taulukko">
+      <thead>
+        <tr>
+          <th>Nimi</th>
+          <th>Puhelin</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <!-- Hakee kaikki serveriltä löytyvät henkilöt -->
+    <script>
+      $(document).ready(function () {
+        $.getJSON("http://localhost:3000/data", function (data) {
+          // Serverin osoite
+          data.forEach(function (henk) {
+            // Käy kaikki henkilöt läpi ja näyttää löydetyt nimet ja puh.numerot
+            $("#taulukko tbody").append(`                           
+            <tr> 
+                <td>${henk.nimi}</td> 
+                <td>${henk.puhelin}</td> 
+            </tr> 
+            `);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

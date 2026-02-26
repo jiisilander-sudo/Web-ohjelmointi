@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Puhelinluettelo – Haku</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> <!-- Asentaa käyttöön jQuery kirjaston -->
+  </head>
+  <body>
+    <!-- Otsikko osio, sisältää navigoinnin sivujen välillä, hakee ulkoasun style.css:stä -->
+    <div id="header">                                                                         
+      <h1>Hae henkilön puhelinnumero</h1>
+      <a href="index.html">Takaisin etusivulle</a>
+      <a href="puhelinluettelo.html">Näytä kaikki henkilöt</a>
+    </div>
+    <!-- Taulukko, sisältää kentät nimelle + numerolle ja napin haku funktiolle, hakee ulkoasun style.css:stä -->
+    <class="form">
+      <label>Nimi:</label>
+      <input type="text" id="nimi"/>
+      <button id="hae">Hae puhelinnumero</button>
+      <label>Puhelinnumero:</label>
+      <input type="text" id="puhelin" readonly />
+    </div>
+    <!-- Osio, joka hakee serveriltä JSON-muodossa olevan datan joka hakee nimellä puh.numeroa -->
+    <script>  
+      $("#hae").click(function () {
+        $.getJSON("http://localhost:3000/data", function (data) {
+          let nimi = $("#nimi").val().trim();
+          let henkilo = data.find(
+            (henk) => henk.nimi.toLowerCase() === nimi.toLowerCase(),       // Hyväksyy myös pienen alkukirjaimen
+          );                     
+          if (henkilo) {                                              // Jos henkilö löytyy näytetään numero puhelin kentässä
+            $("#puhelin").val(henkilo.puhelin);
+          } else {                                                    // Jos ei
+            $("#puhelin").val("Ei löytynyt");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
