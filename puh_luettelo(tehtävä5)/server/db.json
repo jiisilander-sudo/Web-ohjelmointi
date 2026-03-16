@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "nimi": "Aku Ankka",
+      "puhelin": "050-2424232424344334",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "nimi": "Hessu Hopo",
+      "puhelin": "044-4323433"
+    },
+    {
+      "nimi": "Roope Ankka",
+      "puhelin": "050-1111111",
+      "id": 9
+    },
+    {
+      "nimi": "Pekka",
+      "puhelin": "3535353",
+      "id": 10
+    },
+    {
+      "nimi": "MAtti",
+      "puhelin": "3545446445",
+      "id": 11
+    },
+    {
+      "nimi": "Sirpa",
+      "puhelin": "3433666",
+      "id": 12
+    },
+    {
+      "nimi": "Pekka Pii",
+      "puhelin": "2432432",
+      "id": 13
+    },
+    {
+      "nimi": "Masa",
+      "puhelin": "+234243-354435",
+      "id": 14
+    }
+  ]
+}
