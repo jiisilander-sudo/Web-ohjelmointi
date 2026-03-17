@@ -9,10 +9,20 @@
   </head>
   <body>
     <!-- Otsikko osio, sisältää navigoinnin sivujen välillä, hakee ulkoasun style.css:stä -->
-    <div id="header">
-      <h1>Kaikki henkilöt</h1>
-      <a href="index.html">Takaisin etusivulle</a>
-      <a href="haku.html">Hae nimellä</a>
+    <div id="container">
+      <div id="header">
+        <h1>Kaikki henkilöt</h1>
+      </div>
+      <!-- Navigointi sivujen välillä, hakee ulkoasun style.css -->
+      <div id="nav">
+        <ul>
+          <li><a href="index.html">Alku</a></li>
+          <li>
+            <a class="active" href="puhelinluettelo.html">Puhelinluettelo</a>
+          </li>
+          <li><a href="haku.html">Hae henkilöä</a></li>
+        </ul>
+      </div>
     </div>
     <!-- Taulukko osio, hakee ulkoasun style.css:stä -->
     <table id="taulukko">

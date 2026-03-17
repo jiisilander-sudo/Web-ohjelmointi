@@ -8,18 +8,33 @@
   </head>
   <body>
     <!-- Otsikko osio, sisältää navigoinnin sivujen välillä, hakee ulkoasun style.css:stä -->
-    <div id="header">                                                                         
-      <h1>Hae henkilön puhelinnumero</h1>
-      <a href="index.html">Takaisin etusivulle</a>
-      <a href="puhelinluettelo.html">Näytä kaikki henkilöt</a>
+  <div id="container">
+      <div id="header">
+        <h1>Hae numeroa</h1>
+      </div>
+      <!-- Navigointi sivujen välillä, hakee ulkoasun style.css -->
+      <div id="nav">
+        <ul>
+          <li><a href="index.html">Alku</a></li>
+          <li><a href="puhelinluettelo.html">Puhelinluettelo</a></li>
+          <li><a  class="active" href="haku.html">Hae henkilöä</a></li>
+        </ul>
+      </div>
     </div>
     <!-- Taulukko, sisältää kentät nimelle + numerolle ja napin haku funktiolle, hakee ulkoasun style.css:stä -->
     <class="form">
-      <label>Nimi:</label>
-      <input type="text" id="nimi"/>
-      <button id="hae">Hae puhelinnumero</button>
-      <label>Puhelinnumero:</label>
-      <input type="text" id="puhelin" readonly />
+      <table id="taulukko">
+        <tr>
+          <td><label for="nimi">Nimi:</label></td>
+          <td><input type="text" id="nimi" /></td>
+          <td><button id="hae">Hae puhelinnumero</button></td>
+        </tr>
+        <tr>
+          <td><label for="puhelin">Puhelinnumero:</label></td>
+          <td><input type="text" id="puhelin" readonly /></td>
+        </tr>
+      </table>
+    </div>
     </div>
     <!-- Osio, joka hakee serveriltä JSON-muodossa olevan datan joka hakee nimellä puh.numeroa -->
     <script>  
